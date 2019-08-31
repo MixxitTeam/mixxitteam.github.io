@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plenty o' Blocks &ndash; Mixxit</title>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/styles.min.css">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">Mixxit Team</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">News</a>
+              </li>
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Projects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/mp/">Mixxit <div class="badge badge-info">Modpack</div></a>
+                  <a class="dropdown-item active" href="/pob/">Plenty o' Blocks <span class="badge badge-warning">Mod</span> <div class="sr-only">(current)</div></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-shrink-0">
+      <div class="jumbotron jumbotron-fluid hero-animation">
+        <div class="container">
+          <h1 class="display-4">Plenty o' Blocks</h1>
+          <p class="lead">
+            <em>Plenty o' Blocks</em> is a mod for Minecraft 1.12.2 that adds a variety of new blocks to the game.
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="tags alert alert-light">
+          <span>Tags:</span>
+          <span class="badge badge-warning">Mod</span>
+          <span class="badge badge-success">1.12.2</span>
+          <span class="badge badge-secondary">MC Forge</span>
+          <span class="badge badge-danger">Java</span>
+        </div>
+        <div class="text-center">
+          <a href="download.html" class="btn btn-primary btn-lg"><span class="fas fa-download" aria-hidden="true"></span> Download for Minecraft 1.12.2</a>
+        </div>
+        <div class="text-center mt-3">
+          <a href="https://github.com/mixxitteam/plentyoblocks/" class="btn btn-outline-secondary btn"><span class="fab fa-github" aria-hidden="true"></span> View on GitHub</a>
+          <a href="https://github.com/mixxitteam/plentyoblocks/wiki/" class="btn btn-outline-primary btn"><span class="fas fa-book" aria-hidden="true"></span> POB Wiki</a>
+        </div>
+        <hr>
+        <h2 id="status">Development status</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Block</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="statusTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        &copy; Mixxit Team &ndash; <a href="/about.html">About us</a>
+      </div>
+    </footer>
+    <script>
+      fetch("status.json").then(res => res.json()).then(entries => {
+        const tb = document.querySelector("#statusTableBody");
+        entries.forEach(entry => {
+          const tr = document.createElement("tr");
+          let statusText;
+          switch (entry.status) {
+            case 0:
+              tr.className = "table-danger";
+              statusText = "Not implemented";
+              break;
+            case 1:
+              tr.className = "table-warning";
+              statusText = "Partially implemented";
+              break;
+            case 2:
+              tr.className = "table-success";
+              statusText = "Fully implemented";
+              break;
+            default:
+              break;
+          }
+          if (entry.statusnotes.length)
+            statusText += " (" + entry.statusnotes + ")";
+
+          const tdFeature = document.createElement("td");
+          tdFeature.appendChild(document.createTextNode(entry.feature));
+
+          const tdStatus = document.createElement("td");
+          tdStatus.appendChild(document.createTextNode(statusText));
+
+          tr.appendChild(tdFeature);
+          tr.appendChild(tdStatus);
+          tb.appendChild(tr);
+        });
+      })
+    </script>
+    <script src="/js/heroanimation.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

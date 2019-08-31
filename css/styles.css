@@ -1,0 +1,65 @@
+.c-button {
+  color: #F2555B;
+  background-color: rgba(242,85,91,.2);
+  box-shadow: inset 4px 4px 0 #fff, 7px 7px 0 rgba(242,85,91,.2);
+  border: 3px solid #F2555B;
+  padding: 16px 32px;
+  transition: box-shadow 0.2s ease-out;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.c-button:hover {
+  box-shadow: none;
+  color: #F2555B;
+  text-decoration: none;
+}
+
+/* body {
+  color: #130933;
+} */
+
+main {
+  padding-top: 56px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.hero-animation {
+  position: relative;
+  z-index: 1000;
+}
+
+.hero-animation>canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.navbar-brand {
+  text-indent: -9999px;
+  font-size: 0;
+  color: transparent;
+  display: inline-block;
+  /* background-image: url("/img/logo.svg"); */
+  background-image: url("/img/icon.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 40px;
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "feature": "Flint Block",
+    "status": 2,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Flint Bricks",
+    "status": 2,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Charred Planks",
+    "status": 1,
+    "statusnotes": "crafting recipe not working"
+  },
+  {
+    "feature": "Blazed Glowstone",
+    "status": 1,
+    "statusnotes": "no crafting recipe, no custom drops"
+  },
+  {
+    "feature": "Glowstone Lamp",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Obsidian / Coal Block Stairs",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Andersite/Diorite/Granite Stone Bricks",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Gneiss",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Gneiss Bricks",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Hardened Stone",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Slate",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Slate Bricks",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Roof Tile",
+    "status": 1,
+    "statusnotes": "no crafting recipe"
+  },
+  {
+    "feature": "Roof Tile Stairs",
+    "status": 1,
+    "statusnotes": "no crafting recipe"
+  },
+  {
+    "feature": "Roof Tile Slabs",
+    "status": 0,
+    "statusnotes": ""
+  },
+  {
+    "feature": "Mud",
+    "status": 2,
+    "statusnotes": ""
+  }
+]
