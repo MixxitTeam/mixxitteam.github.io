@@ -88,7 +88,7 @@
           DOMentry.className = "mod-entry";
           
           const DOMmodname = document.createElement("span");
-          DOMmodname.classname = "entry-name";
+          DOMmodname.className = "entry-name";
           DOMmodname.innerText = moditm.modname;
           
           const DOMlink = document.createElement("a");
@@ -100,7 +100,7 @@
           DOMlinkwiki.className = "mod-link mod-link-wiki";
           DOMlinkwiki.innerHTML = '<i class="fab fa-wikipedia-w"></i>';
           if (moditm.wiki === null)
-            DOMlinkwiki.className.add("link-disabled");
+            DOMlinkwiki.classList.add("link-disabled");
           else
             DOMlinkwiki.href = moditm.wiki;
           
