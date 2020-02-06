@@ -84,27 +84,31 @@
       fetch("./modlist.json?t=" + (new Date().getTime().toString())).then(res => res.json()).then(dat => {
         const DOMmodlist = document.querySelector("#modlist");
         dat.forEach(moditm => {
-          const DOMentryLink = document.createElement("a");
-          const DOMentryLBracket = document.createTextNode(" (");
-          const DOMentryRBracket = document.createTextNode(")");
-          const DOMentryWikiLink = document.createElement("a");
-          const DOMentryBreak = document.createElement("br");
+          const DOMentry = document.createElement("div");
+          DOMentry.className = "mod-entry";
           
-          DOMentryLink.appendChild(document.createTextNode(moditm.modname));
-          DOMentryLink.href = moditm.website;
+          const DOMmodname = document.createElement("span");
+          DOMmodname.classname = "entry-name";
+          DOMmodname.innerText = moditm.modname;
           
-          DOMmodlist.appendChild(DOMentryLink);
+          const DOMlink = document.createElement("a");
+          DOMlink.className = "mod-link mod-link-ws";
+          DOMlink.innerHTML = '<i class="fas fa-globe-europe"></i>';
+          DOMlink.href = moditm.website;
           
-          if (moditm.wiki !== null) {
-            DOMentryWikiLink.href = moditm.wiki;
-            DOMentryWikiLink.appendChild(document.createTextNode("Wiki"));
-            
-            DOMmodlist.appendChild(DOMentryLBracket);
-            DOMmodlist.appendChild(DOMentryWikiLink);
-            DOMmodlist.appendChild(DOMentryRBracket);
-          }
+          const DOMlinkwiki = document.createElement("a");
+          DOMlinkwiki.className = "mod-link mod-link-wiki";
+          DOMlinkwiki.innerHTML = '<i class="fab fa-wikipedia-w"></i>';
+          if (moditm.wiki === null)
+            DOMlinkwiki.className.add("link-disabled");
+          else
+            DOMlinkwiki.href = moditm.wiki;
           
-          DOMmodlist.appendChild(DOMentryBreak);
+          DOMentry.appendChild(DOMmodname);
+          DOMentry.appendChild(DOMlink);
+          DOMentry.appendChild(DOMlinkwiki);
+          
+          DOMmodlist.appendChild(DOMentry);
         });
       });
     </script>
