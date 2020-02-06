@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <style>
+      #modlist {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .mod-entry {
+        background: #e9ecef;
+        width: 142px;
+        margin: 8px;
+        height: 86px;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body class="d-flex flex-column h-100">
     <header>
@@ -91,6 +106,9 @@
           DOMmodname.className = "entry-name";
           DOMmodname.innerText = moditm.modname;
           
+          const DOMlinks = document.createElement("div");
+          DOMlinks.className = "entry-links";
+          
           const DOMlink = document.createElement("a");
           DOMlink.className = "mod-link mod-link-ws";
           DOMlink.innerHTML = '<i class="fas fa-globe-europe"></i>';
@@ -104,9 +122,10 @@
           else
             DOMlinkwiki.href = moditm.wiki;
           
+          DOMlinks.appendChild(DOMlink);
+          DOMlinks.appendChild(DOMlinkwiki);
           DOMentry.appendChild(DOMmodname);
-          DOMentry.appendChild(DOMlink);
-          DOMentry.appendChild(DOMlinkwiki);
+          DOMentry.appendChild(DOMlinks);
           
           DOMmodlist.appendChild(DOMentry);
         });
