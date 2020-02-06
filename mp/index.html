@@ -7,35 +7,7 @@
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/styles.min.css">
-    <style>
-      #modlist {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .mod-entry {
-        background: #e9ecef;
-        width: 261px;
-        margin: 8px;
-        height: 100px;
-        padding: .25rem .5rem;
-        display: flex;
-        flex-direction: column;
-        border-radius: .25rem;
-      }
-      .entry-name {
-        flex-grow: 1;
-      }
-      .entry-links {
-        display: flex;
-        justify-content: flex-end;
-      }
-      .mod-link-wiki {
-        margin-left: 4px;
-      }
-      .link-disabled {
-        opacity: 0.25;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/mp.min.css">
   </head>
   <body class="d-flex flex-column h-100">
     <header>
@@ -85,16 +57,17 @@
           <h2>Try it early!</h2>
           <p>
             To try this Modpack early, paste the following link into your <a href="https://www.technicpack.net/" target="_blank">Technic Pack Launcher</a> (just click the URL below to select it):<br>
-            <span id="link" class="text-primary" style="user-select: all; cursor: pointer; color:">https://www.technicpack.net/modpack/mixxit-modpack.1617525</span>
+            <span id="link" class="badge badge-primary" style="user-select: all; cursor: pointer; font-size: 0.9em;">http://api.technicpack.net/modpack/mixxit-modpack</span>
           </p>
           <p>
             <strong>Note:</strong> This pack is still in development.
             Please <a href="https://github.com/MixxitTeam/Modpack/issues/new" target="_blank">send us any feedback</a> you have.
             We really value any suggestions you might have!
           </p>
-          <p>
-            <a href="http://mixxitteam.jonaskohl.de/static/distribute/MixxitModpack/TL/files/Mixxit_Modpack_-_Client_-_Beta_0.4.0a_-_Manual_install" class="btn btn-outline-secondary btn-sm" target="_blank">Manual client download</a>
-            <a href="http://mixxitteam.jonaskohl.de/static/distribute/MixxitModpack/TL/files/Mixxit_Modpack_-_Server_-_Game_Beta_0.4.0a_-_Beta_1.0.0a_-_dist.zip" class="btn btn-outline-secondary btn-sm" target="_blank">Server download</a>
+          <p class="text-muted" style="font-size: 0.75em;">
+            <a href="http://mixxitteam.jonaskohl.de/static/distribute/MixxitModpack/TL/files/Mixxit_Modpack_-_Client_-_Beta_0.4.0a_-_Manual_install.zip" class="text-reset" target="_blank">Manual client download</a>
+            or
+            <a href="http://mixxitteam.jonaskohl.de/static/distribute/MixxitModpack/TL/files/Mixxit_Modpack_-_Server_-_Game_Beta_0.4.0a_-_Beta_1.0.0a_-_dist.zip" class="text-reset" target="_blank">Server download</a>
           </p>
         </div>
         <h2>Mod list</h2>
