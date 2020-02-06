@@ -14,12 +14,13 @@
       }
       .mod-entry {
         background: #e9ecef;
-        width: 142px;
+        width: 261px;
         margin: 8px;
-        height: 86px;
-        padding: 4px;
+        height: 100px;
+        padding: .25rem .5rem;
         display: flex;
         flex-direction: column;
+        border-radius: .25rem;
       }
       .entry-name {
         flex-grow: 1;
@@ -126,14 +127,19 @@
           DOMlink.className = "mod-link mod-link-ws";
           DOMlink.innerHTML = '<i class="fas fa-globe-europe"></i>';
           DOMlink.href = moditm.website;
+          DOMlink.target = "_blank";
+          DOMlink.title = "Website";
           
           const DOMlinkwiki = document.createElement("a");
           DOMlinkwiki.className = "mod-link mod-link-wiki";
           DOMlinkwiki.innerHTML = '<i class="fab fa-wikipedia-w"></i>';
           if (moditm.wiki === null)
             DOMlinkwiki.classList.add("link-disabled");
-          else
+          else {
             DOMlinkwiki.href = moditm.wiki;
+            DOMlinkwiki.target = "_blank";
+            DOMlinkwiki.title = "Mod wiki";
+          }
           
           DOMlinks.appendChild(DOMlink);
           DOMlinks.appendChild(DOMlinkwiki);
