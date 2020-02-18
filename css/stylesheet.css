@@ -19,6 +19,14 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+:link, :visited {
+  color: rgb(var(--modpack-color));
+  font-weight: bold;
+  text-decoration: none;
+}
+:link:hover, :visited:hover {
+  text-decoration: underline;
+}
 header {
   display: flex;
   align-items: center;
@@ -150,8 +158,9 @@ header.nobg {
 h2 {
   font-family: Minecrafter;
   font-size: 36pt;
-  margin: 0 0 32px;
+  margin: 32px 0;
   font-weight: normal;
+  text-transform: uppercase;
 }
 #modlist {
   display: flex;
@@ -184,6 +193,7 @@ h2 {
 }
 .mod-link {
   color: inherit;
+  font-weight: normal;
 }
 .mod-link-wiki {
   margin-left: 4px;
@@ -248,6 +258,36 @@ h2 {
   display: block;
   text-align: center;
 }
+mark {
+  background-color: rgb(var(--modpack-color));
+  color: var(--modpack-color-text);
+  font-weight: bold;
+  font-family: monospace;
+  padding: 4px;
+}
+.url {
+  display: block;
+  background-color: rgb(var(--modpack-color));
+  color: var(--modpack-color-text);
+  font-weight: bold;
+  font-family: monospace;
+  padding: 4px;
+  user-select: all;
+  cursor: pointer;
+  width: 100%;
+  max-width: 800px;
+  overflow-x: scroll;
+  margin: 4px auto 0;
+  text-align: center;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.url::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
